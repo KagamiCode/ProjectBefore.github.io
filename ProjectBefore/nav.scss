@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
 
-    .container {
+    .Center-div {
         display: flex;
         align-items: stretch;
         justify-content: center;
@@ -206,13 +206,14 @@ body {
             padding: 4px 12px;
         }
 
-        .ui-widget-content {
+        .widgetline {
             display: flex;
             align-items: center;
             border: none;
             background: transparent;
             position: relative;
             min-width: 200px;
+            max-width: 200px;
 
             @media only screen and (max-width: 576px) {
                 min-width: 150px;
@@ -230,7 +231,7 @@ body {
                 background-color: #5e5e5e;
             }
 
-            .ui-widget-header {
+            .draggable {
                 width: 1rem;
                 height: 24px;
                 background: #5e5e5e;

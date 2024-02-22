@@ -9,226 +9,263 @@
   <!-- pages css -->
   <link rel="stylesheet" href="nav.css">
 
-  <!-- to img -->
+  <!-- to img reference https://mnya.tw/cc/word/1573.html-->
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
-  <!-- draggable -->
-  <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
-  <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-
+  <!-- draggable reference https://www.runoob.com/jqueryui/example-draggable.html and chatGPT-->
 </head>
 
 <body>
 
   <div class="huge-container">
-    <div class="container">
+    <div class="Center-div">
       <h2 class="first-step"><span>構想楷段</span><span>Project::before</span></h2>
-    <div class="tabs">
-      <div class="tab"><span>文字設計</span><span>Typography</span></div>
-      <div class="tab"><span>平面設計</span><span>Graphic Design</span></div>
-    </div>
-
-    <div class="infos">
-      <div class="info">
-        <div class="table-div" id="capture">
-          <div class="title"> <input type="text" placeholder="Theme主題"> </div>
-          <table id="controlTable" class="control-table">
-            <tbody>
-              <tr>
-                <td> <input type="text" value="明體/手寫"> </td>
-                <td>
-                  <div class="draggable2 ui-widget-content line">
-                    <p id="draggable6" class="ui-widget-header dot"></p>
-                  </div>
-                </td>
-                <td> <input type="text" value="黑體/書法"> </td>
-              </tr>
-              <tr>
-                <td> <input type="text" value="簡潔"> </td>
-                <td>
-                  <div class="draggable2 ui-widget-content line">
-                    <p id="draggable10" class="ui-widget-header dot"></p>
-                  </div>
-                </td>
-                <td> <input type="text" value="豐富"> </td>
-              </tr>
-              <tr>
-                <td> <input type="text" value="可愛風格"> </td>
-                <td>
-                  <div class="draggable2 ui-widget-content line">
-                    <p id="draggable7" class="ui-widget-header dot"></p>
-                  </div>
-                </td>
-                <td> <input type="text" value="端莊風格"> </td>
-              </tr>
-              <tr>
-                <td> <input type="text" value="復古感"> </td>
-                <td>
-                  <div class="draggable2 ui-widget-content line">
-                    <p id="draggable9" class="ui-widget-header dot"></p>
-                  </div>
-                </td>
-                <td> <input type="text" value="未來感"> </td>
-              </tr>
-              <tr>
-                <td> <input type="text" value="架構鬆散"> </td>
-                <td>
-                  <div class="draggable2 ui-widget-content line">
-                    <p id="draggable8" class="ui-widget-header dot"></p>
-                  </div>
-                </td>
-                <td> <input type="text" value="架構嚴謹"> </td>
-              </tr>
-
-            </tbody>
-          </table>
-        </div>
-
-        <div class="export-div"><small class="caption">形容詞可編輯, 預設文字為參考。</small>
-          <button onclick="block_capture()" class="DownloadImg"><span>儲存圖片</span><span>Export image</span></button>
-        </div>
-
+      <div class="tabs">
+        <div class="tab"><span>文字設計</span><span>Typography</span></div>
+        <div class="tab"><span>平面設計</span><span>Graphic Design</span></div>
       </div>
 
-      <div class="info">
-        <div class="table-div" id="capture2">
-          <div class="title"> <input type="text" placeholder="Theme主題"> </div>
-          <table id="controlTable2" class="control-table">
-            <!-- <thead>
+      <div class="infos">
+        <div class="info">
+          <div class="table-div" id="capture">
+            <div class="title"> <input type="text" placeholder="Theme主題"> </div>
+            <table id="controlTable" class="control-table">
+              <tbody>
+                <tr>
+                  <td> <input type="text" value="明體/手寫"> </td>
+                  <td>
+                    <div class="widgetline">
+                      <div id="draggable1" class="draggable ui-widget-content">
+                      </div>
+                    </div>
+                  </td>
+                  <td> <input type="text" value="黑體/書法"> </td>
+                </tr>
+                <tr>
+                  <td> <input type="text" value="簡潔"> </td>
+                  <td>
+                    <div class="widgetline">
+                      <div id="draggable2" class="draggable ui-widget-content">
+                      </div>
+                    </div>
+                  </td>
+                  <td> <input type="text" value="豐富"> </td>
+                </tr>
+                <tr>
+                  <td> <input type="text" value="可愛風格"> </td>
+                  <td>
+                    <div class="widgetline">
+                      <div id="draggable3" class="draggable ui-widget-content">
+                      </div>
+                    </div>
+                  </td>
+                  <td> <input type="text" value="端莊風格"> </td>
+                </tr>
+                <tr>
+                  <td> <input type="text" value="復古感"> </td>
+                  <td>
+                    <div class="widgetline">
+                      <div id="draggable4" class="draggable ui-widget-content">
+                      </div>
+                    </div>
+                  </td>
+                  <td> <input type="text" value="未來感"> </td>
+                </tr>
+                <tr>
+                  <td> <input type="text" value="架構鬆散"> </td>
+                  <td>
+                    <div class="widgetline">
+                      <div id="draggable5" class="draggable ui-widget-content">
+                      </div>
+                    </div>
+                  </td>
+                  <td> <input type="text" value="架構嚴謹"> </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <div class="export-div"><small class="caption">形容詞可編輯, 預設文字為參考。</small>
+            <button onclick="block_capture()" class="DownloadImg"><span>儲存圖片</span><span>Export image</span></button>
+          </div>
+
+        </div>
+
+        <div class="info">
+          <div class="table-div" id="capture2">
+            <div class="title"> <input type="text" placeholder="Theme主題"> </div>
+            <table id="controlTable2" class="control-table">
+              <!-- <thead>
               <tr>
                 <th>象限Quadrant</th>
                 <th> </th>
                 <th>Quadrant象限</th>
               </tr>
             </thead> -->
-            <tbody>
-              <tr>
-                <td> <input type="text" value="抽象/扁平/自然"> </td>
-                <td>
-                  <div class="draggable2 ui-widget-content line">
-                    <p id="draggable11" class="ui-widget-header dot"></p>
-                  </div>
-                </td>
-                <td> <input type="text" value="具象/立體/規則"> </td>
-              </tr>
-              <tr>
-                <td> <input type="text" value="簡潔/整齊"> </td>
-                <td>
-                  <div class="draggable2 ui-widget-content line">
-                    <p id="draggable12" class="ui-widget-header dot"></p>
-                  </div>
-                </td>
-                <td> <input type="text" value="豐富/混亂"> </td>
-              </tr>
-              <tr>
-                <td> <input type="text" value="可愛/奔放/喜樂"> </td>
-                <td>
-                  <div class="draggable2 ui-widget-content line">
-                    <p id="draggable13" class="ui-widget-header dot"></p>
-                  </div>
-                </td>
-                <td> <input type="text" value="端莊/神秘/哀怒"> </td>
-              </tr>
-              <tr>
-                <td> <input type="text" value="溫暖/明亮"> </td>
-                <td>
-                  <div class="draggable2 ui-widget-content line">
-                    <p id="draggable14" class="ui-widget-header dot"></p>
-                  </div>
-                </td>
-                <td> <input type="text" value="高冷/昏暗"> </td>
-              </tr>
-              <tr>
-                <td> <input type="text" value="故事感"> </td>
-                <td>
-                  <div class="draggable2 ui-widget-content line">
-                    <p id="draggable15" class="ui-widget-header dot"></p>
-                  </div>
-                </td>
-                <td> <input type="text" value="展示型"> </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td> <input type="text" value="抽象/扁平/自然"> </td>
+                  <td>
+                    <div class="widgetline">
+                      <div id="draggable6" class="draggable ui-widget-content">
+                      </div>
+                    </div>
+                  </td>
+                  <td> <input type="text" value="具象/立體/規則"> </td>
+                </tr>
+                <tr>
+                  <td> <input type="text" value="簡潔/整齊"> </td>
+                  <td>
+                    <div class="widgetline">
+                      <div id="draggable7" class="draggable ui-widget-content">
+                      </div>
+                    </div>
+                  </td>
+                  <td> <input type="text" value="豐富/混亂"> </td>
+                </tr>
+                <tr>
+                  <td> <input type="text" value="可愛/奔放/喜樂"> </td>
+                  <td>
+                    <div class="widgetline">
+                      <div id="draggable8" class="draggable ui-widget-content">
+                      </div>
+                    </div>
+                  </td>
+                  <td> <input type="text" value="端莊/神秘/哀怒"> </td>
+                </tr>
+                <tr>
+                  <td> <input type="text" value="溫暖/明亮"> </td>
+                  <td>
+                    <div class="widgetline">
+                      <div id="draggable9" class="draggable ui-widget-content">
+                      </div>
+                    </div>
+                  </td>
+                  <td> <input type="text" value="高冷/昏暗"> </td>
+                </tr>
+                <tr>
+                  <td> <input type="text" value="故事感"> </td>
+                  <td>
+                    <div class="widgetline">
+                      <div id="draggable10" class="draggable ui-widget-content">
+                      </div>
+                    </div>
+                  </td>
+                  <td> <input type="text" value="展示型"> </td>
+                </tr>
 
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="export-div"><small class="caption">形容詞可編輯, 預設文字為參考。</small>
+            <button onclick="block_capture2()" class="DownloadImg"><span>儲存圖片</span><span>Export image</span></button>
+          </div>
         </div>
-        
-        <div class="export-div"><small class="caption">形容詞可編輯, 預設文字為參考。</small>
-          <button onclick="block_capture2()" class="DownloadImg"><span>儲存圖片</span><span>Export image</span></button>
-        </div>
+        <section>
+
+        </section>
       </div>
-      <section>
+    </div>
 
-      </section>
-    </div>
-    </div>
-    
   </div>
 
-    <!-- Export image -->
-    <script>
-      function block_capture() {
-        html2canvas(document.querySelector("#capture")).then(function (canvas) {
-          a = document.createElement('a');
-          a.href = canvas.toDataURL("image/jpeg", 0.92).replace("image/jpeg", "image/octet-stream");
-          a.download = 'image.jpg';
-          a.click();
-        });
-      }
-      function block_capture2() {
-        html2canvas(document.querySelector("#capture2")).then(function (canvas) {
-          a = document.createElement('a');
-          a.href = canvas.toDataURL("image/jpeg", 0.92).replace("image/jpeg", "image/octet-stream");
-          a.download = 'image.jpg';
-          a.click();
-        });
-      }
-    </script>
-
-    <!-- tabs -->
-    <script>
-      var tabs = document.querySelectorAll('.tab')
-      var infos = document.querySelectorAll('.info')
-
-      console.log(tabs)
-      console.clear()
-      for (let i = 0; i < tabs.length; i++) {
-        tabs[0].classList.add("show")
-        infos[0].classList.add("showBlock")
-        tabs[i].addEventListener('click', function () {
-          clearAllTabs()
-          tabs[i].classList.add("show")
-          infos[i].classList.add("showBlock")
-        })
-      }
-
-      function clearAllTabs() {
-        for (let i = 0; i < tabs.length; i++) {
-          tabs[i].classList.remove("show")
-          infos[i].classList.remove("showBlock")
-        }
-      }
-    </script>
-
-    <!-- draggable -->
-    <script>
-      $(function () {
-        $("#draggable").draggable({ axis: "y" });
-        $("#draggable2").draggable({ axis: "x" });
-
-        $("#draggable3").draggable({ containment: "#containment-wrapper", scroll: false });
-        $("#draggable6").draggable({ containment: "parent" });
-        $("#draggable7").draggable({ containment: "parent" });
-        $("#draggable8").draggable({ containment: "parent" });
-        $("#draggable9").draggable({ containment: "parent" });
-        $("#draggable10").draggable({ containment: "parent" });
-        $("#draggable11").draggable({ containment: "parent" });
-        $("#draggable12").draggable({ containment: "parent" });
-        $("#draggable13").draggable({ containment: "parent" });
-        $("#draggable14").draggable({ containment: "parent" });
-        $("#draggable15").draggable({ containment: "parent" });
+  <!-- Export image -->
+  <script>
+    function block_capture() {
+      html2canvas(document.querySelector("#capture")).then(function (canvas) {
+        a = document.createElement('a');
+        a.href = canvas.toDataURL("image/jpeg", 0.92).replace("image/jpeg", "image/octet-stream");
+        a.download = 'image.jpg';
+        a.click();
       });
-    </script>
+    }
+    function block_capture2() {
+      html2canvas(document.querySelector("#capture2")).then(function (canvas) {
+        a = document.createElement('a');
+        a.href = canvas.toDataURL("image/jpeg", 0.92).replace("image/jpeg", "image/octet-stream");
+        a.download = 'image.jpg';
+        a.click();
+      });
+    }
+  </script>
+
+  <!-- tabs -->
+  <script>
+    var tabs = document.querySelectorAll('.tab')
+    var infos = document.querySelectorAll('.info')
+
+    console.log(tabs)
+    console.clear()
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[0].classList.add("show")
+      infos[0].classList.add("showBlock")
+      tabs[i].addEventListener('click', function () {
+        clearAllTabs()
+        tabs[i].classList.add("show")
+        infos[i].classList.add("showBlock")
+      })
+    }
+
+    function clearAllTabs() {
+      for (let i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove("show")
+        infos[i].classList.remove("showBlock")
+      }
+    }
+  </script>
+
+  <!-- draggable -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    $(function () {
+      // Make the draggable elements draggable within their respective containers
+      $(".draggable").each(function () {
+        var container = $(this).parent();
+        $(this).draggable({
+          containment: container,
+          axis: "x" // Restrict dragging to the horizontal axis
+        });
+
+        // Add touch event listeners for touch devices
+        var lastX;
+        $(this).on('touchstart', function (event) {
+          // Save the initial touch position
+          lastX = event.originalEvent.touches[0].pageX;
+        });
+
+        $(this).on('touchmove', function (event) {
+          // Ensure that only single touch is being handled
+          if (event.originalEvent.touches.length == 1) {
+            var touch = event.originalEvent.touches[0];
+
+            // Calculate the distance moved since the last touch position
+            var deltaX = touch.pageX - lastX;
+
+            // Get the current left position of the draggable element
+            var currentLeft = parseInt($(this).css('left')) || 0;
+
+            // Calculate the new left position based on the distance moved
+            var newLeft = currentLeft + deltaX;
+
+            // Ensure the new left position is within the container
+            newLeft = Math.min(Math.max(newLeft, 0), container.width() - $(this).outerWidth());
+
+            // Set the new left position of the draggable element
+            $(this).css('left', newLeft + 'px');
+
+            // Update the last touch position
+            lastX = touch.pageX;
+
+            // Prevent default touch behavior
+            event.preventDefault();
+          }
+        });
+      });
+    });
+  </script>
 
 
 </body>
