@@ -6,8 +6,10 @@
 }
 
 body {
+    --bgr: #F3F3F3;
+    --mainColor: #5e5e5e;
     overflow-y: hidden;
-    background-color: rgb(230, 230, 230);
+    background-color: var(--bgr);
 }
 
 .huge-container {
@@ -23,14 +25,6 @@ body {
         text-wrap: balance;
         margin-top: 24px;
         width: 600px;
-
-        // @media only screen and (max-width: 1280px) {
-        //     width: 60%;
-        // }
-
-        // @media only screen and (max-width: 1024px) {
-        //     width: 70%;
-        // }
 
         @media only screen and (max-width: 576px) {
             width: 100%;
@@ -68,8 +62,23 @@ body {
         }
     }
 
+    @keyframes in {
+        0% {
+            letter-spacing: 0px;
+        }
+
+        30% {
+            letter-spacing: 3px;
+        }
+
+        100% {
+            letter-spacing: 3px;
+        }
+    }
+
     .first-step {
         text-align: center;
+        animation: in 1s ease-out forwards;
 
         span:nth-child(2) {
             display: none;
@@ -84,7 +93,41 @@ body {
 
             span:nth-child(2) {
                 display: block;
+                letter-spacing: 0px;
             }
+        }
+    }
+
+    .changeColor {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        padding: 0px 24px;
+
+        button {
+            width: 20px;
+            height: 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        #customColorDF {
+            background-color: #5e5e5e;
+        }
+
+        #customColorMT {
+            background-color: #816051;
+        }
+
+        #customColorLT {
+            background-color: #CDA581;
+        }
+
+        input[type=color] {
+            width: 26px;
+            height: 27px;
         }
     }
 
@@ -107,7 +150,7 @@ body {
             }
 
             &:hover {
-                color: #5e5e5e;
+                color: var(--mainColor);
 
                 span:nth-child(1) {
                     display: none;
@@ -119,10 +162,10 @@ body {
             }
 
             &.show {
-                color: #5e5e5e;
+                color: var(--mainColor);
                 font-weight: 700;
                 margin-bottom: -2px;
-                border-bottom: #5e5e5e 2px solid;
+                border-bottom: var(--mainColor) 2px solid;
             }
         }
     }
@@ -157,7 +200,7 @@ body {
 
     .table-div {
         padding: 12px 12px;
-        background-color: rgb(230, 230, 230);
+        background-color: var(--bgr);
 
         .title {
             width: 100%;
@@ -165,16 +208,17 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-
+            
             input[type="text"] {
+            font-weight: 600;
                 width: 96.2%;
                 padding: 4px 0px;
                 font-size: 18px;
                 text-align: center;
             }
         }
-        
-        input[type="text"]{
+
+        input[type="text"] {
             border: none;
         }
     }
@@ -228,13 +272,13 @@ body {
                 content: "";
                 width: 100%;
                 height: 6px;
-                background-color: #5e5e5e;
+                background-color: var(--mainColor);
             }
 
             .draggable {
                 width: 1rem;
                 height: 24px;
-                background: #5e5e5e;
+                background: var(--mainColor);
                 border: none;
                 border-radius: 0.3rem;
                 cursor: pointer;
@@ -266,7 +310,7 @@ body {
         margin-top: 12px;
         font-size: 16px;
         font-weight: 600;
-
+        background-color: rgb(236, 236, 236);
         cursor: pointer;
         width: 100%;
         font-family: 'Noto Sans TC', 'Work Sans', sans-serif;
@@ -289,4 +333,14 @@ body {
         }
 
     }
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 4px;
+    color: #858585;
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: 12px;
 }

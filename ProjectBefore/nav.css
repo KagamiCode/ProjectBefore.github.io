@@ -5,8 +5,10 @@
 }
 
 body {
+  --bgr: #F3F3F3;
+  --mainColor: #5e5e5e;
   overflow-y: hidden;
-  background-color: rgb(230, 230, 230);
+  background-color: var(--bgr);
 }
 
 .huge-container {
@@ -53,8 +55,20 @@ body {
 .huge-container .dtgroup .designtypes:focus {
   box-shadow: inset 10px 10px 20px #c1c1c1, inset -10px -10px 20px #ffffff;
 }
+@keyframes in {
+  0% {
+    letter-spacing: 0px;
+  }
+  30% {
+    letter-spacing: 3px;
+  }
+  100% {
+    letter-spacing: 3px;
+  }
+}
 .huge-container .first-step {
   text-align: center;
+  animation: in 1s ease-out forwards;
 }
 .huge-container .first-step span:nth-child(2) {
   display: none;
@@ -67,6 +81,34 @@ body {
 }
 .huge-container .first-step:hover span:nth-child(2) {
   display: block;
+  letter-spacing: 0px;
+}
+.huge-container .changeColor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 0px 24px;
+}
+.huge-container .changeColor button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.huge-container .changeColor #customColorDF {
+  background-color: #5e5e5e;
+}
+.huge-container .changeColor #customColorMT {
+  background-color: #816051;
+}
+.huge-container .changeColor #customColorLT {
+  background-color: #CDA581;
+}
+.huge-container .changeColor input[type=color] {
+  width: 26px;
+  height: 27px;
 }
 .huge-container .tabs {
   display: flex;
@@ -86,7 +128,7 @@ body {
   display: none;
 }
 .huge-container .tabs .tab:hover {
-  color: #5e5e5e;
+  color: var(--mainColor);
 }
 .huge-container .tabs .tab:hover span:nth-child(1) {
   display: none;
@@ -95,10 +137,10 @@ body {
   display: block;
 }
 .huge-container .tabs .tab.show {
-  color: #5e5e5e;
+  color: var(--mainColor);
   font-weight: 700;
   margin-bottom: -2px;
-  border-bottom: #5e5e5e 2px solid;
+  border-bottom: var(--mainColor) 2px solid;
 }
 .huge-container .infos .info {
   display: none;
@@ -125,7 +167,7 @@ body {
 }
 .huge-container .table-div {
   padding: 12px 12px;
-  background-color: rgb(230, 230, 230);
+  background-color: var(--bgr);
 }
 .huge-container .table-div .title {
   width: 100%;
@@ -135,6 +177,7 @@ body {
   align-items: center;
 }
 .huge-container .table-div .title input[type=text] {
+  font-weight: 600;
   width: 96.2%;
   padding: 4px 0px;
   font-size: 18px;
@@ -193,12 +236,12 @@ body {
   content: "";
   width: 100%;
   height: 6px;
-  background-color: #5e5e5e;
+  background-color: var(--mainColor);
 }
 .huge-container .control-table .widgetline .draggable {
   width: 1rem;
   height: 24px;
-  background: #5e5e5e;
+  background: var(--mainColor);
   border: none;
   border-radius: 0.3rem;
   cursor: pointer;
@@ -226,6 +269,7 @@ body {
   margin-top: 12px;
   font-size: 16px;
   font-weight: 600;
+  background-color: rgb(236, 236, 236);
   cursor: pointer;
   width: 100%;
   font-family: "Noto Sans TC", "Work Sans", sans-serif;
@@ -242,4 +286,14 @@ body {
 }
 .huge-container .DownloadImg:hover span:nth-child(2) {
   display: block;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 4px;
+  color: #858585;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 12px;
 }/*# sourceMappingURL=nav.css.map */

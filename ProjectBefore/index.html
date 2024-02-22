@@ -20,6 +20,21 @@
   <div class="huge-container">
     <div class="Center-div">
       <h2 class="first-step"><span>構想楷段</span><span>Project::before</span></h2>
+      <div class="changeColor">
+        <div>
+          <button id="customColorDF"></button>
+          <button id="customColorMT"></button>
+          <button id="customColorLT"></button>
+        </div>
+        <div>
+          <label for="getColor">主色</label>
+          <input type="color" id="customColorPick" name="getColor" class="getColor" value="#5e5e5e">
+          <label for="getBg">背景色</label>
+          <input type="color" id="customBgPick" name="getBg" class="getBg" value="#F3F3F3">
+        </div>
+
+      </div>
+
       <div class="tabs">
         <div class="tab"><span>文字設計</span><span>Typography</span></div>
         <div class="tab"><span>平面設計</span><span>Graphic Design</span></div>
@@ -171,6 +186,9 @@
 
   </div>
 
+  <footer>Copyright (c) 2024 KagamiCode.MIT License.</footer>
+
+
   <!-- Export image -->
   <script>
     function block_capture() {
@@ -264,6 +282,34 @@
           }
         });
       });
+    });
+  </script>
+
+  <!-- customColor -->
+  <script>
+    $('#customColorDF').on('click', function () {
+      $('body').css('--bgr', '#F3F3F3');
+      $('body').css('--mainColor', '#5e5e5e');
+    });
+    $('#customColorMT').on('click', function () {
+      $('body').css('--bgr', '#FFFFFF');
+      $('body').css('--mainColor', '#816051');
+    });
+    $('#customColorLT').on('click', function () {
+      $('body').css('--bgr', '#FFFFFF');
+      $('body').css('--mainColor', '#CDA581');
+    });
+    $(".getColor").on("change", function () {
+      //Get Color
+      var colorpick = $(".getColor").val();
+      //apply cuurent color to div
+      $("body").css("--mainColor", colorpick);
+    });
+    $(".getBg").on("change", function () {
+      //Get Color
+      var bgpick = $(".getBg").val();
+      //apply cuurent color to div
+      $("body").css("--bgr", bgpick);
     });
   </script>
 
