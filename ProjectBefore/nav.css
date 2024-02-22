@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;800&display=swap");
+* {
+  margin: 0 0;
+  font-family: "Noto Sans TC", "Work Sans", sans-serif;
+}
+
+body {
+  overflow-y: hidden;
+  background-color: rgb(230, 230, 230);
+}
+
+.huge-container {
+  display: flex;
+  justify-content: center;
+}
+.huge-container .container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  text-wrap: balance;
+  margin-top: 24px;
+  width: 600px;
+}
+@media only screen and (max-width: 576px) {
+  .huge-container .container {
+    width: 100%;
+  }
+}
+.huge-container .dtgroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.huge-container .dtgroup .designtypes {
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 14px 20px;
+  border-radius: 2px;
+  background: #e3e3e3;
+  letter-spacing: 1.5px;
+}
+.huge-container .dtgroup .designtypes:hover {
+  font-weight: 800;
+}
+.huge-container .dtgroup .designtypes:focus {
+  box-shadow: inset 10px 10px 20px #c1c1c1, inset -10px -10px 20px #ffffff;
+}
+.huge-container .first-step {
+  text-align: center;
+}
+.huge-container .first-step span:nth-child(2) {
+  display: none;
+}
+.huge-container .first-step:hover {
+  transition: all 0.3s ease-in-out;
+}
+.huge-container .first-step:hover span:nth-child(1) {
+  display: none;
+}
+.huge-container .first-step:hover span:nth-child(2) {
+  display: block;
+}
+.huge-container .tabs {
+  display: flex;
+  justify-content: center;
+  padding: 0 22px;
+}
+.huge-container .tabs .tab {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 4px 0px;
+  text-align: center;
+  cursor: pointer;
+  width: 50%;
+}
+.huge-container .tabs .tab span:nth-child(2) {
+  display: none;
+}
+.huge-container .tabs .tab:hover {
+  color: #5e5e5e;
+}
+.huge-container .tabs .tab:hover span:nth-child(1) {
+  display: none;
+}
+.huge-container .tabs .tab:hover span:nth-child(2) {
+  display: block;
+}
+.huge-container .tabs .tab.show {
+  color: #5e5e5e;
+  font-weight: 700;
+  margin-bottom: -2px;
+  border-bottom: #5e5e5e 2px solid;
+}
+.huge-container .infos .info {
+  display: none;
+}
+.huge-container .infos .info.showBlock {
+  display: block;
+}
+.huge-container .infos .info .kind1,
+.huge-container .infos .info .kind2 {
+  background-color: #fafafa;
+  height: 45px;
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 3px;
+  padding-left: 15px;
+  margin-bottom: 55px;
+}
+@media only screen and (max-width: 950px) {
+  .huge-container .infos .info .kind1,
+  .huge-container .infos .info .kind2 {
+    width: 260px;
+  }
+}
+.huge-container .table-div {
+  padding: 12px 12px;
+  background-color: rgb(230, 230, 230);
+}
+.huge-container .table-div .title {
+  width: 100%;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.huge-container .table-div .title input[type=text] {
+  width: 96.2%;
+  padding: 4px 0px;
+  font-size: 18px;
+  text-align: center;
+}
+.huge-container .table-div input[type=text] {
+  border: none;
+}
+.huge-container .control-table {
+  width: 100%;
+}
+.huge-container .control-table td {
+  padding: 4px 0px;
+}
+.huge-container .control-table th:nth-child(1),
+.huge-container .control-table tr td:nth-child(1),
+.huge-container .control-table th:nth-child(3),
+.huge-container .control-table tr td:nth-child(3) {
+  display: flex;
+  justify-content: center;
+}
+.huge-container .control-table th:nth-child(1) input[type=text],
+.huge-container .control-table tr td:nth-child(1) input[type=text],
+.huge-container .control-table th:nth-child(3) input[type=text],
+.huge-container .control-table tr td:nth-child(3) input[type=text] {
+  width: 85%;
+  text-align: center;
+  padding: 4px 4px;
+  font-size: 16px;
+}
+.huge-container .control-table th:nth-child(2),
+.huge-container .control-table tr td:nth-child(2) {
+  padding: 4px 12px;
+}
+.huge-container .control-table .ui-widget-content {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  position: relative;
+  min-width: 200px;
+}
+@media only screen and (max-width: 576px) {
+  .huge-container .control-table .ui-widget-content {
+    min-width: 150px;
+  }
+}
+@media only screen and (max-width: 475px) {
+  .huge-container .control-table .ui-widget-content {
+    min-width: 130px;
+  }
+}
+.huge-container .control-table .ui-widget-content::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 6px;
+  background-color: #5e5e5e;
+}
+.huge-container .control-table .ui-widget-content .ui-widget-header {
+  width: 1rem;
+  height: 24px;
+  background: #5e5e5e;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.huge-container .caption {
+  color: #858585;
+  letter-spacing: 1.2px;
+  padding-left: 2px;
+}
+.huge-container .export-div {
+  padding: 8px 18px;
+}
+@media only screen and (max-width: 576px) {
+  .huge-container .export-div {
+    padding: 8px 16px;
+  }
+}
+.huge-container .DownloadImg {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: none;
+  padding: 8px 0px;
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  font-family: "Noto Sans TC", "Work Sans", sans-serif;
+}
+.huge-container .DownloadImg span:nth-child(2) {
+  display: none;
+}
+.huge-container .DownloadImg:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+.huge-container .DownloadImg:hover span:nth-child(1) {
+  display: none;
+}
+.huge-container .DownloadImg:hover span:nth-child(2) {
+  display: block;
+}/*# sourceMappingURL=nav.css.map */
